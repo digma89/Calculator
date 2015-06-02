@@ -3,7 +3,8 @@
 /// <reference path="typings/tweenjs/tweenjs.d.ts" />
 /// <reference path="typings/soundjs/soundjs.d.ts" />
 /// <reference path="typings/preloadjs/preloadjs.d.ts" />
-/// <reference path="objects/buttons.ts" />
+
+/// <reference path="objects/button.ts" />
 
 
 // Game Framework Variables
@@ -70,7 +71,7 @@ function gameLoop() {
 }
 
 // Callback function that allows me to respond to button click events
-function plusButtonClicked(event: createjs.MouseEvent) {
+function pinkButtonClicked(event: createjs.MouseEvent) {
     createjs.Sound.play("clicked");
 }
 
@@ -87,8 +88,8 @@ function main() {
     helloLabel.y = 190;
     stage.addChild(helloLabel);
 
-    plusButton = new objects.Button(assets.getResult("plusButton"),160,260);
-    stage.addChild(plusButton.image);
-    plusButton.image.on("click", plusButtonClicked);
+    plusButton = new objects.Button(assets.getResult("plusButton"), 160, 270);
+    stage.addChild(plusButton);
+    plusButton.on("click", pinkButtonClicked);
 
 }

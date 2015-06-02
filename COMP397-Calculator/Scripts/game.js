@@ -3,7 +3,7 @@
 /// <reference path="typings/tweenjs/tweenjs.d.ts" />
 /// <reference path="typings/soundjs/soundjs.d.ts" />
 /// <reference path="typings/preloadjs/preloadjs.d.ts" />
-/// <reference path="objects/buttons.ts" />
+/// <reference path="objects/button.ts" />
 // Game Framework Variables
 var canvas = document.getElementById("canvas");
 var stage;
@@ -53,7 +53,7 @@ function gameLoop() {
     stats.end(); // end measuring
 }
 // Callback function that allows me to respond to button click events
-function plusButtonClicked(event) {
+function pinkButtonClicked(event) {
     createjs.Sound.play("clicked");
 }
 // Callback functions that change the alpha transparency of the button
@@ -66,8 +66,8 @@ function main() {
     helloLabel.x = 160;
     helloLabel.y = 190;
     stage.addChild(helloLabel);
-    plusButton = new objects.Button(assets.getResult("plusButton"), 160, 260);
-    stage.addChild(plusButton.image);
-    plusButton.image.on("click", plusButtonClicked);
+    plusButton = new objects.Button(assets.getResult("plusButton"), 160, 270);
+    stage.addChild(plusButton);
+    plusButton.on("click", pinkButtonClicked);
 }
 //# sourceMappingURL=game.js.map
